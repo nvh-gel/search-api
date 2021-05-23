@@ -1,0 +1,7 @@
+elasticsearch:
+  host: dogwood-534087461.us-east-1.bonsaisearch.net
+  port: 443
+  key: keegkygkkd
+  secret: mc8wlnqi2f
+server:
+  port: 8080

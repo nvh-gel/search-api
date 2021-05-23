@@ -1,0 +1,7 @@
+elasticsearch:
+  host: apricot-767826311.us-east-1.bonsaisearch.net
+  port: 443
+  key: i3jnqhy0z7
+  secret: b52eszny3d
+server:
+  port: 8088
