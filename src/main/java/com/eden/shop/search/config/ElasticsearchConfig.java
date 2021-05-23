@@ -31,6 +31,7 @@ public class ElasticsearchConfig {
     private String secret;
 
     @Bean
+    @SuppressWarnings("java:S2095")
     public RestHighLevelClient client() {
 
         var clientConfiguration = ClientConfiguration.builder()

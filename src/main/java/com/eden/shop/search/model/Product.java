@@ -21,6 +21,10 @@ public class Product {
     private Long productId;
     private String productName;
     private String description;
+    private Integer brandId;
+    private String brandName;
+    private Integer categoryId;
+    private String categoryName;
     private Double price;
     private Double salePrice;
     private Integer totalStock;
