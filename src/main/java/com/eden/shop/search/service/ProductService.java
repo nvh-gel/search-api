@@ -17,4 +17,15 @@ public interface ProductService {
      * @return list of all products
      */
     List<ProductVM> findAllProducts();
+
+    /**
+     * Index a product in elasticsearch.
+     *
+     * @param productVM product to index
+     */
+    void indexProduct(ProductVM productVM);
+
+    void removeIndex(Long productId);
+
+    void removeAllIndices();
 }

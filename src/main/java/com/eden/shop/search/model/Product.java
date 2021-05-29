@@ -17,7 +17,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 public class Product {
 
     @Id
-    private Long id;
+    private String id;
     private Long productId;
     private String productName;
     private String description;
@@ -25,6 +25,8 @@ public class Product {
     private String brandName;
     private Integer categoryId;
     private String categoryName;
+    private Integer manufacturerId;
+    private String manufacturerName;
     private Double price;
     private Double salePrice;
     private Integer totalStock;

@@ -17,6 +17,8 @@ public class ProductVM {
     private String brandName;
     private Integer categoryId;
     private String categoryName;
+    private Integer manufacturerId;
+    private String manufacturerName;
     private Double price;
     private Double salePrice;
     private Integer totalStock;

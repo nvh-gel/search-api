@@ -8,6 +8,7 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
  *
  * @author nvhien
  */
-public interface ProductRepository extends ElasticsearchRepository<Product, Long> {
+public interface ProductRepository extends ElasticsearchRepository<Product, String> {
 
+    Product findProductByProductId(Long productId);
 }

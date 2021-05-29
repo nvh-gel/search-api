@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -35,6 +36,40 @@ public class ProductServiceImpl implements ProductService {
                 .stream(productRepository.findAll().spliterator(), false)
                 .collect(Collectors.toList());
         return productMapper.productToProductVM(products);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Transactional
+    @Override
+    public void indexProduct(ProductVM productVM) {
+
+        var product = productRepository.findProductByProductId(productVM.getProductId());
+        if (null != product) {
+            productMapper.mapUpdateProduct(product, productVM);
+        } else {
+            product = productMapper.productVMToProduct(productVM);
+        }
+        productRepository.save(product);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void removeIndex(Long productId) {
+
+        var product = productRepository.findProductByProductId(productId);
+        if (null != product) {
+            productRepository.delete(product);
+        }
+    }
+
+    @Override
+    public void removeAllIndices() {
+
+        productRepository.deleteAll();
     }
 
     /**
